@@ -1,0 +1,117 @@
+body {
+  background-color: rgb(231, 236, 236);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+    color: black;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a:hover {
+    color: red;
+}
+
+h2, h3 {
+    color: brown;
+}
+
+
+.profile-pic,
+.hobbies-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 0 8px 0;
+}
+
+figure {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 16px 0;
+}
+
+figcaption {
+    font-size: small;
+    text-align: center;
+}
+
+
+.hobbies-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.hobbies-table th,
+.hobbies-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hobbies-table th {
+    background-color: #eee;
+}
+
+
+#contact button:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.site-footer a {
+    color: #444;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    text-decoration: underline;
+}
+
+@media (max-width:600px) {
+
+    .profile-pic,
+    .hobbies-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    nav li{
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .profile-pic, .hobbies-image {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+}
