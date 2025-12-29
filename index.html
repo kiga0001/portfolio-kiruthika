@@ -18,7 +18,7 @@
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#interests-hobbies">Interests and Hobbies</a></li>
             <li><a href="#future-goals">Future Goals</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#contact-form">Contact Me</a></li>
             <li><a href="https://w3schools.com/" target="_blank">External Page</a></li>
         </ul>
     </nav>
@@ -99,37 +99,47 @@
 
     <section id="contact-form">
         <h2>Contact Me</h2>
-            <p>
-                <label for="firstname">First Name:</label> 
+
+        <form class="contact-form" method="post" novalidate>
+            <div class="form-field">
+                <label for="firstname">First Name</label>
                 <input type="text" id="firstname" name="firstname" required>
-            </p>
-            <p>
-                <label for="lastname">Last Name:</label> 
+            </div>
+
+            <div class="form-field">
+                <label for="lastname">Last Name</label>
                 <input type="text" id="lastname" name="lastname" required>
-            </p>
-            <p>
-                <label for="email">Email:</label> 
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="phone">Phone Number:</label> 
+            </div>
+
+            <div class="form-field">
+                <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone">
-            </p>
-            <p>
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject">
+            </div>
+
+            <div class="form-field">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
                     <option value="inquiry">General Inquiry</option>
                     <option value="feedback">Feedback</option>
                     <option value="support">Support</option>
                 </select>
-            </p>
-            <p>
-                <label for="message">Message:</label><br>
+            </div>
+
+            <div class="form-field">
+                <label for="message">Message</label>
                 <textarea id="message" name="message" minlength="20" required></textarea>
-            </p>
-            <button type="submit" id="submitbtn">Submit</button>
-            <button type="reset" id="resetbtn">Clear</button>
-        </form> 
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submitbtn">Submit</button>
+                <button type="reset" id="resetbtn">Clear</button>
+            </div>
+        </form>
     </section>
 
     <footer class = "site-footer">
