@@ -8,6 +8,7 @@
 
 <body>
 
+    <script src="contact.js"></script>
     <header class = "header">
         <h1>KIRUTHIKA GANESHAN</h1>
     </header>
@@ -96,30 +97,43 @@
         <p>One of my main goals is to improve my web development skills and become a confident web developer. I want to combine my mathematics background with coding to create clean, functional, and user-friendly websites.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact-form">
         <h2>Contact Me</h2>
-        <form action="mailto:kiruthika.ganeshan@hotmail.com" method="post" enctype="text/plain">
             <p>
-                <label>Name: 
-                    <input type="text" name="name" required>
-                </label>
+                <label for="firstname">First Name:</label> 
+                <input type="text" id="firstname" name="firstname" required>
             </p>
             <p>
-                <label>Email: 
-                    <input type="email" name="email" required>
-                </label>
+                <label for="lastname">Last Name:</label> 
+                <input type="text" id="lastname" name="lastname" required>
             </p>
             <p>
-                <label>Message:<br>
-                    <textarea name="message" rows="2"></textarea>
-                </label>
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" required>
             </p>
-            <button type="submit">Send</button>
-        </form>    
+            <p>
+                <label for="phone">Phone Number:</label> 
+                <input type="tel" id="phone" name="phone">
+            </p>
+            <p>
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="inquiry">General Inquiry</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="support">Support</option>
+                </select>
+            </p>
+            <p>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" minlength="20" required></textarea>
+            </p>
+            <button type="submit" id="submitbtn">Submit</button>
+            <button type="reset" id="resetbtn">Clear</button>
+        </form> 
     </section>
 
     <footer class = "site-footer">
-        <p>Contact Info: kiruthika.ganeshan@hotmail.com</p>
+        <p><a href="mailto:kiruthika@portfolio.me">Contact Me</a></p>
         <p>© 2024 Kiruthika Ganeshan</p>  
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </footer>
