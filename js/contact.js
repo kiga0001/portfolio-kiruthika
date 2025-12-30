@@ -19,3 +19,14 @@ function validateName(name) {
     }
     return regex.test(cleaned)
 }
+
+// Validate Email
+ 
+function validateEmail(email) {
+    const cleaned = email.trim();
+    if (cleaned === "") {
+        return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(cleaned)
+}
