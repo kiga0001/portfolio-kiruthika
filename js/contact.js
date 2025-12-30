@@ -7,6 +7,7 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
+const charCounter = document.getElementById("charCounter");
 
 
 // Validate Name
@@ -86,4 +87,23 @@ function clearForm() {
     clearError(field);
   });
 }
+
+// Update Character Counter
+
+const MIN_MESSAGE_LENGTH = 20;
+function updateCharCounter() {
+ 
+  const len = message.value.length;
+  charCounter.textContent = `${len} / ${MIN_MESSAGE_LENGTH} characters`;
+ 
+  if (len >= MIN_MESSAGE_LENGTH) {
+    charCounter.classList.add("valid");
+  } else {
+    charCounter.classList.remove("valid");
+  }
+}
+ 
+message.addEventListener("input", updateCharCounter);
+updateCharCounter();
+ 
  

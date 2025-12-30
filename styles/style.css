@@ -79,11 +79,12 @@ figcaption {
 .form-field {
     display: flex;
     align-items: center;
-    gap: auto;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .form-field label {
-    min-width: 120px;
+    flex: 0 0 120px;
 }
 
 .form-field input,
@@ -97,6 +98,11 @@ figcaption {
     border-radius: 4px;
     box-sizing: border-box;
     font: inherit;
+}
+
+/* textarea takes the remaining width */
+.form-field textarea {
+    flex: 1;
 }
 
 .form-actions {
@@ -122,32 +128,47 @@ figcaption {
 
 
 .form-field {
-  flex-wrap: wrap;
-  align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
- 
+
 
 .input-error {
-  border-color: #dc3545 !important;
+    border-color: #dc3545 !important;
 }
- 
+
 
 .input-valid {
-  border-color: #198754 !important;
+    border-color: #198754 !important;
 }
 
 .error-message {
-  flex-basis: 100%;
-  margin-left: 120px;   
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #dc3545;  
-  display: none;
+    flex-basis: 100%;
+    margin-left: 120px;
+    margin-top: 0;
+    font-size: 0.85rem;
+    color: #dc3545;
+    transition: color 0.2s ease;
+    display: none;
 }
- 
+
 .error-message.show {
-  display: block;
+    display: block;
 }
+
+.char-counter {
+    flex-basis: 100%;
+    padding-left: calc(120px + 12px);
+    margin-top: 0;
+    font-size: 0.85rem;
+    color: #dc3545;
+    transition: color 0.2s ease;
+}
+
+.char-counter.valid {
+    color: #28a745;
+}
+
 
 
 .site-footer {
@@ -194,7 +215,7 @@ figcaption {
     }
 
     .form-field label {
-        min-width: 0;
+        flex-basis: 100%;
     }
 
     .form-actions {
@@ -204,5 +225,9 @@ figcaption {
 
     .error-message {
         margin-left: 0;
+    }
+    
+    .char-counter {
+        padding-left: 0;
     }
 }
