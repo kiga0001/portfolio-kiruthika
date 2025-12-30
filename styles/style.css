@@ -79,11 +79,11 @@ figcaption {
 .form-field {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: auto;
 }
 
 .form-field label {
-    min-width: 140px;
+    min-width: 120px;
 }
 
 .form-field input,
@@ -97,11 +97,6 @@ figcaption {
     border-radius: 4px;
     box-sizing: border-box;
     font: inherit;
-}
-
-.form-field textarea {
-    min-height: 110px;
-    resize: vertical;
 }
 
 .form-actions {
