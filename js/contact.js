@@ -30,3 +30,14 @@ function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(cleaned)
 }
+
+// Validate Message
+function validateMessage(message) {
+    const cleaned = message.trim();
+ 
+    if (cleaned === "") {
+        return false;
+    }
+ 
+    return cleaned.length >= 20;
+}
