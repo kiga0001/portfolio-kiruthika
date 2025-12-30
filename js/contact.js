@@ -75,3 +75,15 @@ function clearError(input) {
   }
 }
  
+// Clear Form
+ 
+function clearForm() {
+  form.reset();
+ 
+  const fields = form.querySelectorAll("input, select, textarea");
+  fields.forEach((field) => {
+    field.classList.remove("input-error", "input-valid");
+    clearError(field);
+  });
+}
+ 
