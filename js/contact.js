@@ -63,4 +63,15 @@ function showError(input, messageText) {
     error.textContent = messageText;
     error.classList.add("show");
 }
+
+ //Clear Error
+ 
+function clearError(input) {
+  input.classList.remove("input-error");
+ 
+  const error = input.parentElement.querySelector(".error-message");
+  if (error) {
+    error.classList.remove("show");
+  }
+}
  
