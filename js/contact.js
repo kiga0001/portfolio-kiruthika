@@ -41,3 +41,26 @@ function validateMessage(message) {
  
     return cleaned.length >= 20;
 }
+
+// Show Error
+function showError(input, messageText) {
+    
+    input.classList.add("input-error");
+    input.classList.remove("input-valid"); 
+ 
+    const field = input.parentElement;
+ 
+    
+    let error = field.querySelector(".error-message");
+ 
+    
+    if (!error) {
+        error = document.createElement("div");
+        error.className = "error-message";
+        field.appendChild(error); 
+    }
+ 
+    error.textContent = messageText;
+    error.classList.add("show");
+}
+ 

@@ -121,6 +121,35 @@ figcaption {
 }
 
 
+.form-field {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+ 
+
+.input-error {
+  border-color: #dc3545 !important;
+}
+ 
+
+.input-valid {
+  border-color: #198754 !important;
+}
+
+.error-message {
+  flex-basis: 100%;
+  margin-left: 120px;   
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #dc3545;  
+  display: none;
+}
+ 
+.error-message.show {
+  display: block;
+}
+
+
 .site-footer {
     text-align: center;
     padding: 20px;
@@ -171,5 +200,9 @@ figcaption {
     .form-actions {
         margin-left: 0;
         width: 100%;
+    }
+
+    .error-message {
+        margin-left: 0;
     }
 }
