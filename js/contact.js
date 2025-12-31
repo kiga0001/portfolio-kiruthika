@@ -8,6 +8,7 @@ const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
 const charCounter = document.getElementById("charCounter");
+const successMessage = document.getElementById("successMessage");
 
 
 // Validate Name
@@ -106,4 +107,107 @@ function updateCharCounter() {
 message.addEventListener("input", updateCharCounter);
 updateCharCounter();
  
- 
+ // Clear button
+resetBtn.addEventListener("click", function () {
+  clearForm();
+  updateCharCounter();
+
+  if (successMessage) {
+    successMessage.classList.remove("show");
+    successMessage.textContent = "";
+  }
+});
+
+// Submit form
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let isValid = true;
+
+  // First Name
+  const firstNameValue = firstName.value.trim();
+  if (firstNameValue === "") {
+    showError(firstName, "First name is required.");
+    isValid = false;
+  } else if (!validateName(firstName.value)) {
+    showError(firstName, "First name must contain only letters.");
+    isValid = false;
+  } else {
+    clearError(firstName);
+    firstName.classList.remove("input-error");
+    firstName.classList.add("input-valid");
+  }
+
+  // Last Name
+  const lastNameValue = lastName.value.trim();
+  if (lastNameValue === "") {
+    showError(lastName, "Last name is required.");
+    isValid = false;
+  } else if (!validateName(lastName.value)) {
+    showError(lastName, "Last name must contain only letters.");
+    isValid = false;
+  } else {
+    clearError(lastName);
+    lastName.classList.remove("input-error");
+    lastName.classList.add("input-valid");
+  }
+
+  // Email
+  const emailValue = email.value.trim();
+  if (emailValue === "") {
+    showError(email, "Email is required.");
+    isValid = false;
+  } else if (!validateEmail(email.value)) {
+    showError(email, "Please enter a valid email address.");
+    isValid = false;
+  } else {
+    clearError(email);
+    email.classList.remove("input-error");
+    email.classList.add("input-valid");
+  }
+
+  // Subject
+  if (subject.value === "") {
+    showError(subject, "Please select a subject.");
+    isValid = false;
+  } else {
+    clearError(subject);
+    subject.classList.remove("input-error");
+    subject.classList.add("input-valid");
+  }
+
+  // Message
+  const messageValue = message.value.trim();
+  if (messageValue === "") {
+    showError(message, "Message is required.");
+    isValid = false;
+  } else if (!validateMessage(message.value)) {
+    showError(message, "Message must be at least 20 characters.");
+    isValid = false;
+  } else {
+    clearError(message);
+    message.classList.remove("input-error");
+    message.classList.add("input-valid");
+  }
+
+  // Stop if error exists
+  if (!isValid) {
+    if (successMessage) {
+      successMessage.classList.remove("show");
+      successMessage.textContent = "";
+    }
+    return;
+  }
+
+  // Success message
+  successMessage.textContent = `Thank you ${firstNameValue}! I will contact you soon!`;
+  successMessage.classList.add("show");
+
+  setTimeout(function () {
+    successMessage.classList.remove("show");
+    successMessage.textContent = "";
+  }, 3000);
+
+  clearForm();
+  updateCharCounter();
+});
