@@ -100,7 +100,6 @@ figcaption {
     font: inherit;
 }
 
-/* textarea takes the remaining width */
 .form-field textarea {
     flex: 1;
 }

@@ -1,5 +1,5 @@
-// Get references to all form elements and Store them in variables
-
+// Get references to the form
+const form = document.getElementById("contactForm");
 // Get references to input fields
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
@@ -7,12 +7,12 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
+const resetBtn = document.getElementById("resetbtn");
 const charCounter = document.getElementById("charCounter");
 const successMessage = document.getElementById("successMessage");
 
 
 // Validate Name
-
 function validateName(name) {
     const cleaned = name.trim();
     const regex = /^[a-zA-Z]+$/;
@@ -23,7 +23,6 @@ function validateName(name) {
 }
 
 // Validate Email
- 
 function validateEmail(email) {
     const cleaned = email.trim();
     if (cleaned === "") {
