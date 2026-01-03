@@ -205,8 +205,7 @@ form.addEventListener("submit", function (event) {
   setTimeout(function () {
     successMessage.classList.remove("show");
     successMessage.textContent = "";
+    clearForm();
+    updateCharCounter();
   }, 3000);
-
-  clearForm();
-  updateCharCounter();
 });
