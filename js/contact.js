@@ -104,7 +104,7 @@ function updateCharCounter() {
 }
  
 message.addEventListener("input", updateCharCounter);
-updateCharCounter();
+// updateCharCounter();
  
  // Clear button
 resetBtn.addEventListener("click", function () {
