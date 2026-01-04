@@ -208,4 +208,4 @@ form.addEventListener("submit", function (event) {
     clearForm();
     updateCharCounter();
   }, 3000);
-});
+})
