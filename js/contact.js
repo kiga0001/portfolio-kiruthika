@@ -181,7 +181,7 @@ form.addEventListener("submit", function (event) {
     showError(message, "Message is required.");
     isValid = false;
   } else if (!validateMessage(message.value)) {
-    showError(message, "Message must be at least 20 characters.");
+    showError(message, "Message must be at least 30 characters.");
     isValid = false;
   } else {
     clearError(message);
