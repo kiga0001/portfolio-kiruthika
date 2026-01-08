@@ -40,7 +40,7 @@ function validateMessage(message) {
         return false;
     }
  
-    return cleaned.length >= 20;
+    return cleaned.length <= 30;
 }
 
 // Show Error
@@ -90,13 +90,13 @@ function clearForm() {
 
 // Update Character Counter
 
-const MIN_MESSAGE_LENGTH = 20;
+const MAX_MESSAGE_LENGTH = 30;
 function updateCharCounter() {
  
   const len = message.value.length;
-  charCounter.textContent = `${len} / ${MIN_MESSAGE_LENGTH} characters`;
+  charCounter.textContent = `${len} / ${MAX_MESSAGE_LENGTH} characters`;
  
-  if (len >= MIN_MESSAGE_LENGTH) {
+  if (len >= MAX_MESSAGE_LENGTH) {
     charCounter.classList.add("valid");
   } else {
     charCounter.classList.remove("valid");
